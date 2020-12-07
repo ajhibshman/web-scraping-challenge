@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="../static/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mars Information</h1>
+      <p>Click below to scrape various Mars related date from the Internet</p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Data!</a></p>
+    </div>
+<br>
+
+    <div class="container">
+        <h2>Latest news article from NASA's Mars News Site</h2>
+        <h3>{{ mars_name.news_title }}</h3>
+        <p>{{ mars_name.news_p }}</p>
+    </div>
+<br>
+<hr>
+<br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-8">
+                <h2>Mars Image</h2>
+                <section id="figure">
+                    <img id="mars-image" src={{mars_name.image1}} alt="mars image">
+                </section>
+            </div>
+            <div class="col col-md-4">
+                <h2>Table of Mars Facts</h2>
+                <div class="table-responsive">
+                    
+                        {{mars_name.table1}}
+                       
+                </div>   
+            </div>
+        </div>
+    </div>
+
+<br>
+<hr>
+<div class="container">
+    <div class="row">
+    <!-- write a for loop that lists out your data and accesses the values using dot notation. -->
+      {% for item in mars_name.hemispheres_list %}
+      <div class="col-lg-3">
+          <div class="card" style="width: 20rem;">
+              <div class="card-body">
+                <h4 class="card-title">{{ item.title }}</h4>
+                <a href={{item.img_url}}><img id="hem_image" src={{item.img_url}} width=100%></a>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+   
+<h1> more text less</h1>
+
+
+  </div>
+ 
+</body>
+
+</html>
