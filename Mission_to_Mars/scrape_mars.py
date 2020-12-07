@@ -48,9 +48,10 @@ def scrape_info():
     df1=df.set_index(0)
     df1=df1.rename(columns={0: '',1:'Mars' })
     df1.index.name=None
-    html_table = df.to_html()
+    df1.head()
+    print("helooooo!!!")
+    html_table = df1.to_html()
     html_table.replace('\n', '')
-    df.to_html('table.html')
     mars["table1"]=html_table
     
     # #obtain high resolution images for each of Mar's hemispheres.
