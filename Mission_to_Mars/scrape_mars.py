@@ -26,15 +26,20 @@ def scrape_info():
     mars["news_p"]=articles[0].find('div',class_='article_teaser_body').text
 
     #scrape 2- JPL Mars Space Images 
-    url = 'https://space-facts.com/mars/'
+    url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url)
+    time.sleep(1)
+
+    browser.links.find_by_partial_text('FULL IMAGE').click()
+    time.sleep(1)
 
     html=browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
-    image=soup.find('img', class_='wp-image-5696')
+    image=soup.find('img', class_='fancybox-image')
     featured_image_url=image.get('src')
-    mars["image1"]=featured_image_url
+    mars['image1']='https://www.jpl.nasa.gov' + featured_image_url
+    
 
     #scrape 3- Mars Facts
     url = 'https://space-facts.com/mars/'
