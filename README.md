@@ -9,9 +9,10 @@ Pressing the Scrape button on the webpage will query/ Requery for fresh data.
 
 Example of webserver results:
 
-![index](https://github.com/ajhibshman/Web-Sraping-Challenge/blob/main/images/index.PNG)
+![index](/images/index.PNG)
+![index2](/images/index2.PNG)
 
 <br>
 
-![mongo](https://github.com/ajhibshman/Web-Sraping-Challenge/blob/main/images/mongodb.PNG)
+![mongo](/images/mongodb.PNG)
 
